@@ -3,11 +3,11 @@ Create sonar user to manage the SonarQube server
 #As a good security practice, SonarQuber Server is not advised to run sonar service as a root user, 
 # create a new user called sonar and grant sudo access to manage sonar services as follows
 
-sudo useradd sonar
+$ sudo useradd sonar
 
 # Grand sudo access to sonar user
 
-sudo echo "sonar ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/sonar
+$ sudo echo "sonar ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/sonar
 
 # set hostname for the sonarqube server
 
@@ -22,8 +22,9 @@ sudo service sshd restart
 ## Sonarqube Installation Process
 
 # 1. Install the latest Java, wget, git & unzip
+
  $ cd /opt
- sudo yum -y install unzip wget git
+ $ sudo yum -y install unzip wget git
     $ sudo yum install java-1.8.0
     
 # 2. Install Sonarqube
@@ -31,8 +32,8 @@ sudo service sshd restart
    
 # Unzip the folder
     $ sudo unzip sonarqube-7.6.zip
-    sudo rm -rf sonarqube-7.6.zip
-sudo mv sonarqube-7.6 sonarqube
+    $ sudo rm -rf sonarqube-7.6.zip
+    $ sudo mv sonarqube-7.6 sonarqube
 
 #  Change the user group and file permissions
     $ chown -R sonar:sonar /opt/sonarqube-7.6
@@ -40,11 +41,11 @@ sudo mv sonarqube-7.6 sonarqube
     
 **6. start sonarQube server**
 
-sh /opt/sonarqube/bin/linux-x86-64/sonar.sh start 
+$ sh /opt/sonarqube/bin/linux-x86-64/sonar.sh start 
 
-sh /opt/sonarqube/bin/linux-x86-64/sonar.sh status
+$ sh /opt/sonarqube/bin/linux-x86-64/sonar.sh status
 
-7. Ensure that SonarQube is running and Access sonarQube on the browser
+Ensure that SonarQube is running and Access sonarQube on the browser
    
 sonarqube default port is = 9000
 
