@@ -11,13 +11,16 @@ $ sudo echo "sonar ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/sonar
 
 # set hostname for the sonarqube server
 
-sudo hostnamectl set-hostname sonar 
-sudo su - sonar
-1b. Assign password to sonar user
-sudo passwd sonar
-2. Enable PasswordAuthentication in the server
-sudo sed -i "/^[^#]*PasswordAuthentication[[:space:]]no/c\PasswordAuthentication yes" /etc/ssh/sshd_config
-sudo service sshd restart
+$ sudo hostnamectl set-hostname sonar 
+$ sudo su - sonar
+
+**1b. Assign password to sonar user**
+$ sudo passwd sonar
+
+**2. Enable PasswordAuthentication in the server**
+
+$ sudo sed -i "/^[^#]*PasswordAuthentication[[:space:]]no/c\PasswordAuthentication yes" /etc/ssh/sshd_config
+$ sudo service sshd restart
 
 ## Sonarqube Installation Process
 
