@@ -25,14 +25,13 @@ $ sudo su - sonar
 
 ## Sonarqube Installation Process
 
-# 1. Install the latest Java, wget, git & unzip
+# Install the latest Java, wget, git & unzip
     $ cd /opt
     $ sudo yum -y install unzip wget git
     $ sudo yum install java-1.8.0
     
-# 2. Install Sonarqube
-
-   $ wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-7.6.zip
+# Install Sonarqube
+     $ wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-7.6.zip
    
 # Unzip the folder
     $ sudo unzip sonarqube-7.6.zip
