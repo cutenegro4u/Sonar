@@ -3,18 +3,14 @@ Create sonar user to manage the SonarQube server
 #As a good security practice, SonarQuber Server is not advised to run sonar service as a root user, 
 
 # create a new user called sonar and grant sudo access to manage sonar services as follows
-
-$ sudo useradd sonar
+     $ sudo useradd sonar
 
 # Grand sudo access to sonar user
-
-$ sudo echo "sonar ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/sonar
+        $ sudo echo "sonar ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/sonar
 
 # set hostname for the sonarqube server
-
-$ sudo hostnamectl set-hostname sonar 
-
-$ sudo su - sonar
+      $ sudo hostnamectl set-hostname sonar 
+      $ sudo su - sonar
 
 ## **1b. Assign password to sonar user**
       $ sudo passwd sonar
