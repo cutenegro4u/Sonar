@@ -16,23 +16,18 @@ $ sudo hostnamectl set-hostname sonar
 
 $ sudo su - sonar
 
-**1b. Assign password to sonar user**
+## **1b. Assign password to sonar user**
+      $ sudo passwd sonar
 
-$ sudo passwd sonar
-
-**2. Enable PasswordAuthentication in the server**
-
-$ sudo sed -i "/^[^#]*PasswordAuthentication[[:space:]]no/c\PasswordAuthentication yes" /etc/ssh/sshd_config
-$ sudo service sshd restart
+## **2. Enable PasswordAuthentication in the server**
+        $ sudo sed -i "/^[^#]*PasswordAuthentication[[:space:]]no/c\PasswordAuthentication yes" /etc/ssh/sshd_config
+        $ sudo service sshd restart
 
 ## Sonarqube Installation Process
 
 # 1. Install the latest Java, wget, git & unzip
-
- $ cd /opt
- 
- $ sudo yum -y install unzip wget git
- 
+    $ cd /opt
+    $ sudo yum -y install unzip wget git
     $ sudo yum install java-1.8.0
     
 # 2. Install Sonarqube
@@ -48,11 +43,9 @@ $ sudo service sshd restart
     $ chown -R sonar:sonar /opt/sonarqube-7.6
     $ chmod -R 775 /opt/sonarqube-7.6/
     
-**6. start sonarQube server**
-
-$ sh /opt/sonarqube/bin/linux-x86-64/sonar.sh start 
-
-$ sh /opt/sonarqube/bin/linux-x86-64/sonar.sh status
+#  **6. start sonarQube server**
+     $ sh /opt/sonarqube/bin/linux-x86-64/sonar.sh start 
+     $ sh /opt/sonarqube/bin/linux-x86-64/sonar.sh status
 
 Ensure that SonarQube is running and Access sonarQube on the browser
    
